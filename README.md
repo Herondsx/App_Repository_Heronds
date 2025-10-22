@@ -46,46 +46,30 @@ npx expo start --tunnel
 
 <h2>Estrutura de pastas</h2>
 <pre><code>📦 hapti-chat
-├─ 📄 App.tsx
+📦 hapti-chat
+├─ 📄 App.tsx                 # ponto de entrada (pode registrar a navegação aqui)
 ├─ 📄 package.json
 ├─ 📄 app.json
-├─ 📄 tsconfig.json
 ├─ 📄 babel.config.js
 ├─ 🗂️ assets/
 │  ├─ 🖼️ icon.png
 │  ├─ 🖼️ splash.png
-│  └─ 🗂️ library/
+│  └─ 🗂️ library/            # imagens simples do alfabeto (se usar)
 │     ├─ 🖼️ morse_a.png
 │     ├─ 🖼️ morse_b.png
 │     └─ 🖼️ ...
-├─ 🗂️ src/
-│  ├─ 🗂️ navigation/
-│  │  └─ 📄 index.tsx              <!-- Abas (Tabs) + Pilha (Stack) -->
-│  ├─ 🗂️ screens/
-│  │  ├─ 📄 HomeScreen.tsx
-│  │  ├─ 📄 TrainScreen.tsx
-│  │  ├─ 📄 ChatsScreen.tsx
-│  │  ├─ 📄 ChatDetailScreen.tsx
-│  │  ├─ 📄 LibraryScreen.tsx
-│  │  └─ 📄 SettingsScreen.tsx
-│  ├─ 🗂️ components/
-│  │  ├─ 📄 HapticPad.tsx          <!-- Captura · e — -->
-│  │  ├─ 📄 MessageBubble.tsx
-│  │  └─ 📄 MorseChart.tsx
-│  ├─ 🗂️ hooks/
-│  │  ├─ 📄 useMorse.ts            <!-- encode/decode + tempos -->
-│  │  ├─ 📄 useHaptics.ts          <!-- vibração (sucesso/erro) -->
-│  │  └─ 📄 useShakeToClear.ts     <!-- opcional (acelerômetro) -->
-│  ├─ 🗂️ lib/
-│  │  ├─ 📄 morseMap.ts            <!-- mapeamento A–Z, 0–9, sinais -->
-│  │  └─ 📄 morseDecoder.ts        <!-- máquina de estados -->
-│  ├─ 🗂️ services/
-│  │  └─ 📄 storage.ts             <!-- AsyncStorage (keys, get/set) -->
-│  ├─ 🗂️ styles/
-│  │  └─ 📄 theme.ts               <!-- cores/tipografia -->
-│  └─ 🗂️ types/
-│     └─ 📄 index.ts               <!-- tipos de Message, Settings -->
-└─ 📄 README.md
+└─ 🗂️ src/
+   ├─ 📄 navigation.tsx       # Tabs + (opcional) Stack p/ detalhe
+   ├─ 🗂️ screens/
+   │  ├─ 📄 Home.tsx
+   │  ├─ 📄 Train.tsx
+   │  ├─ 📄 Chats.tsx
+   │  └─ 📄 Library.tsx
+   ├─ 🗂️ components/
+   │  └─ 📄 HapticPad.tsx     # botão/área que detecta toque curto/long
+   └─ 🗂️ utils/
+      ├─ 📄 morse.ts          # mapa A–Z/0–9 e helpers simples (encode/decode básico)
+      └─ 📄 storage.ts        # get/set do AsyncStorage (history, settings)
 </code></pre>
 
 <p><em>Observação:</em> o foco é usar somente conteúdos trabalhados em aula (React Native com Expo, navegação, imagens, armazenamento local e atuador de vibração).</p>
