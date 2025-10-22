@@ -9,30 +9,66 @@
 <p><strong>Autor:</strong> Heron de Souza</p>
 
 <h2>O que é</h2>
-<p>Aplicativo móvel feito com React Native (Expo Go) para treinar e trocar mensagens simples em código Morse usando toques curtos (·) e longos (—) com feedback por vibração.</p>
-
-<h2>Como funciona (resumo)</h2>
+<p>Aplicativo simples em React Native (Expo Go) para duas coisas:</p>
 <ul>
-  <li>Você toca rápido para <strong>·</strong> e mantém pressionado para <strong>—</strong>.</li>
-  <li>O app vibra em cada símbolo e ao fechar uma letra/palavra.</li>
-  <li>O histórico das mensagens e ajustes são salvos localmente.</li>
-  <li>A navegação usa abas (telas principais) e pilha (detalhes).</li>
+  <li><strong>Vibrar um texto em Morse:</strong> você escreve uma frase e o celular vibra o padrão em pontos (·) e traços (—).</li>
+  <li><strong>Treinar toques:</strong> você pratica fazendo toques curtos (·) e longos (—) e o app monta as letras.</li>
 </ul>
 
-<h2>Funcionalidades</h2>
+<h2>O que você consegue fazer com o HaptiChat</h2>
 <ul>
-  <li><strong>Treino Morse:</strong> área para praticar toques curtos/longos com vibração.</li>
-  <li><strong>Conversas locais:</strong> lista de mensagens enviadas/recebidas (texto + horário).</li>
-  <li><strong>Biblioteca:</strong> referência do alfabeto (A–Z, 0–9, sinais) com imagens.</li>
-  <li><strong>Configurações:</strong> sensibilidade de toque e ligar/desligar vibração.</li>
+  <li><strong>Sentir</strong> uma mensagem curta só pela vibração (sem precisar olhar a tela).</li>
+  <li><strong>Praticar</strong> o ritmo do Morse com toques e ver o texto gerado.</li>
+  <li>Consultar uma <strong>biblioteca</strong> com o alfabeto em Morse (imagens) quando tiver dúvida.</li>
+  <li>Repetir o que já fez, usando um <strong>histórico local</strong> salvo no aparelho.</li>
+</ul>
+
+<h2>Como usar (passo a passo)</h2>
+
+<h3>1) Modo “Vibrar um texto”</h3>
+<ol>
+  <li>Acesse a aba <strong>Home</strong>.</li>
+  <li>Digite um texto curto (ex.: <em>oi, tudo bem?</em>).</li>
+  <li>Toque em <strong>Vibrar</strong>. O celular vibra o padrão Morse da frase.</li>
+  <li>Use novamente o botão para repetir quando quiser.</li>
+</ol>
+<p><em>Observação:</em> a vibração representa cada símbolo (· e —) e as pausas entre letras/palavras.</p>
+
+<h3>2) Modo “Treino de toques”</h3>
+<ol>
+  <li>Acesse a aba <strong>Train</strong>.</li>
+  <li><strong>Toque rápido</strong> para ponto (·) e <strong>segure</strong> para traço (—).</li>
+  <li>O app vibra a cada toque e tenta montar a letra quando você faz a pausa.</li>
+  <li>O texto decodificado aparece na tela. Apague e tente de novo quando quiser.</li>
+</ol>
+
+<h3>3) Biblioteca</h3>
+<ul>
+  <li>Aba <strong>Library</strong> → imagens com o alfabeto (A–Z, 0–9) e uma legenda simples de sinais.</li>
+</ul>
+
+<h3>4) Histórico</h3>
+<ul>
+  <li>Aba <strong>Chats</strong> → lista das últimas mensagens/treinos salvos no aparelho.</li>
+</ul>
+
+<h3>5) Ajustes</h3>
+<ul>
+  <li>Ajuste de <strong>vibração</strong> ligada/desligada e <strong>sensibilidade</strong> do toque (simples).</li>
+</ul>
+
+<h2>O que o app não faz</h2>
+<ul>
+  <li>Não tem conta, login ou envio online. Tudo é <strong>local</strong>.</li>
+  <li>Não usa recursos avançados além do visto em aula.</li>
 </ul>
 
 <h2>Tecnologias usadas</h2>
 <ul>
-  <li><strong>Expo + React Native</strong> (executa no app Expo Go).</li>
-  <li><strong>React Navigation</strong> (Bottom Tabs + Stack).</li>
-  <li><strong>AsyncStorage</strong> (armazenamento local key–value).</li>
-  <li><strong>Vibration</strong> (atuador de vibração do dispositivo).</li>
+  <li><strong>Expo + React Native</strong> (roda no app Expo Go).</li>
+  <li><strong>React Navigation</strong> (abas e, se precisar, uma pilha simples).</li>
+  <li><strong>AsyncStorage</strong> (salvar histórico e ajustes localmente).</li>
+  <li><strong>Vibration</strong> (vibração para o Morse e feedback de toque).</li>
 </ul>
 
 <h2>Instalação e execução (Expo Go)</h2>
@@ -44,28 +80,31 @@ npx expo start
 npx expo start --tunnel
 </code></pre>
 
-<h2>Estrutura de pastas</h2>
-<pre><code>📦 hapti-chat
-📦 HAPTIChat
+<h2>Estrutura de pastas (simples)</h2>
+<pre><code>📦 Project
 ├─ 🗂️ assets/
+│  ├─ icon.png
+│  ├─ splash.png
+│  └─ library/
+│     ├─ morse_chart.png
+│     ├─ haptic_pad_guide.png
+│     └─ signal_legend.png
 ├─ 🗂️ src/
-│  ├─ 🗂️ components/
-│  │  └─ 📄 HapticPad.tsx
-│  ├─ 🗂️ screens/
-│  │  ├─ 📄 Chats.tsx
-│  │  ├─ 📄 Home.tsx
-│  │  ├─ 📄 Library.tsx
-│  │  └─ 📄 Train.tsx
-│  ├─ 🗂️ utils/
-│  │  ├─ 📄 morse.ts
-│  │  └─ 📄 storage.ts
-│  └─ 📄 navigation.tsx
-├─ 📄 App.js
-├─ 📄 app.json
-├─ 📄 App.tsx
-├─ 📄 babel.config.js
-└─ 📄 package.json
-
+│  ├─ components/
+│  │  └─ HapticPad.js
+│  ├─ screens/
+│  │  ├─ Home.js
+│  │  ├─ Train.js
+│  │  ├─ Chats.js
+│  │  └─ Library.js
+│  ├─ utils/
+│  │  ├─ morse.js
+│  │  └─ storage.js
+│  └─ navigation.js
+├─ App.js
+├─ app.json
+├─ babel.config.js
+└─ package.json
 </code></pre>
 
 </body>
