@@ -46,30 +46,26 @@ npx expo start --tunnel
 
 <h2>Estrutura de pastas</h2>
 <pre><code>📦 hapti-chat
-📦 hapti-chat
-├─ 📄 App.tsx                 # ponto de entrada (pode registrar a navegação aqui)
-├─ 📄 package.json
-├─ 📄 app.json
-├─ 📄 babel.config.js
+📦 HAPTIChat
 ├─ 🗂️ assets/
-│  ├─ 🖼️ icon.png
-│  ├─ 🖼️ splash.png
-│  └─ 🗂️ library/            # imagens simples do alfabeto (se usar)
-│     ├─ 🖼️ morse_a.png
-│     ├─ 🖼️ morse_b.png
-│     └─ 🖼️ ...
-└─ 🗂️ src/
-   ├─ 📄 navigation.tsx       # Tabs + (opcional) Stack p/ detalhe
-   ├─ 🗂️ screens/
-   │  ├─ 📄 Home.tsx
-   │  ├─ 📄 Train.tsx
-   │  ├─ 📄 Chats.tsx
-   │  └─ 📄 Library.tsx
-   ├─ 🗂️ components/
-   │  └─ 📄 HapticPad.tsx     # botão/área que detecta toque curto/long
-   └─ 🗂️ utils/
-      ├─ 📄 morse.ts          # mapa A–Z/0–9 e helpers simples (encode/decode básico)
-      └─ 📄 storage.ts        # get/set do AsyncStorage (history, settings)
+├─ 🗂️ src/
+│  ├─ 🗂️ components/
+│  │  └─ 📄 HapticPad.tsx
+│  ├─ 🗂️ screens/
+│  │  ├─ 📄 Chats.tsx
+│  │  ├─ 📄 Home.tsx
+│  │  ├─ 📄 Library.tsx
+│  │  └─ 📄 Train.tsx
+│  ├─ 🗂️ utils/
+│  │  ├─ 📄 morse.ts
+│  │  └─ 📄 storage.ts
+│  └─ 📄 navigation.tsx
+├─ 📄 App.js
+├─ 📄 app.json
+├─ 📄 App.tsx
+├─ 📄 babel.config.js
+└─ 📄 package.json
+
 </code></pre>
 
 <p><em>Observação:</em> o foco é usar somente conteúdos trabalhados em aula (React Native com Expo, navegação, imagens, armazenamento local e atuador de vibração).</p>
