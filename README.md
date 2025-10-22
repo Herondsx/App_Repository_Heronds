@@ -68,7 +68,5 @@ npx expo start --tunnel
 
 </code></pre>
 
-<p><em>Observação:</em> o foco é usar somente conteúdos trabalhados em aula (React Native com Expo, navegação, imagens, armazenamento local e atuador de vibração).</p>
-
 </body>
 </html>
